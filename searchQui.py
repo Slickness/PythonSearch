@@ -1,6 +1,8 @@
 from PyQt4 import QtCore, QtGui, Qt
 import sys
 import PySearch
+#gui to search a browser and an engine
+
 class SearchWindowClass(QtGui.QWidget):
     def __init__(self):
         super(SearchWindowClass,self).__init__()
@@ -12,7 +14,7 @@ class SearchWindowClass(QtGui.QWidget):
         self.LabelStatus.setAlignment(QtCore.Qt.AlignCenter)
         self.Engine = QtGui.QComboBox(self)
         self.Engine.move(5,50)
-        self.Engine.addItems(['google','yahoo','Bing'])
+        self.Engine.addItems(['Google','Yahoo','Bing'])
         self.browserChoice = QtGui.QComboBox(self)
         self.browserChoice.move(5,25)
         Avail = PySearch.getAvailableBrowser()
@@ -32,7 +34,7 @@ class SearchWindowClass(QtGui.QWidget):
         SearchString = str(self.SearchString.text())
         myBrowser = str(self.browserChoice.currentText())
         myEngine = str(self.Engine.currentText())
-        PySearch.goSearch(myBrowser,SearchString)
+        PySearch.goIndSearch(myBrowser,SearchString,myEngine)
 
 if __name__=="__main__":
     #print PySearch.urls

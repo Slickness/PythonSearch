@@ -24,15 +24,15 @@ def getAvailableBrowser():
             pass
     return availableBrowsers
 
-
-#x = webbrowser.get('chromium-browser') #make an instance of chromium browser pos add a schoose option
-#x.open("www.google.com/search?q=mlb scores ",new=new) # google search uses q =
-#x.open("www.bing.com/search?q=mlb scores ",new=new) # bing search uses q =
-#x.open("search.yahoo.com/search?p=mlb scores",new=new) # yahoo search uses p =
 def goSearch(browser,searchString):
     #take the browser and the search string and serch all engines in urls
     for searcher in urls:
-        webbrowser.get(browser).open(searcher + searchString)
+        webbrowser.get(browser).open(searcher + searchString,new=new)
+def goIndSearch(browser,searchString,engine):
+    #makes the ability to search one engine
+    dict = {'Google': gUrl, 'Yahoo': yUrl, 'Bing': bUrl}
+    x = str(dict[engine])
+    webbrowser.get(browser).open(x+searchString,new=new)
 if __name__=="__main__":
     AvBrowser = getAvailableBrowser()
     try:
