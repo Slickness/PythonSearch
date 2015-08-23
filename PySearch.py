@@ -30,6 +30,7 @@ def getAvailableBrowser():
 #x.open("www.bing.com/search?q=mlb scores ",new=new) # bing search uses q =
 #x.open("search.yahoo.com/search?p=mlb scores",new=new) # yahoo search uses p =
 def goSearch(browser,searchString):
+    #take the browser and the search string and serch all engines in urls
     for searcher in urls:
         webbrowser.get(browser).open(searcher + searchString)
 if __name__=="__main__":
